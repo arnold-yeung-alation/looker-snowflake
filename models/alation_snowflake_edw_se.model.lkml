@@ -92,6 +92,10 @@ explore: loans_dclnd_occ {}
 
 explore: loans_declnd_stats {}
 
+explore: looker_event_dashboard_view {
+  label: "Looker Event Dashboard"
+}
+
 explore: loans_full_details {}
 
 explore: snowflake_categorized_cost {}
@@ -103,11 +107,11 @@ explore: test {}
 explore: fin_cstmr {
   label: " Finance Detail"
   join: fin_tx {
-    relationship:  many_to_many
-    sql_on:  ${fin_tx.cstmr_id} = ${fin_cstmr.cust_id} ;;
+    relationship: many_to_many
+    sql_on: ${fin_tx.cstmr_id} = ${fin_cstmr.cust_id} ;;
   }
   join: fin_spnd_sgmnt {
-    relationship:  many_to_many
-    sql_on:  ${fin_spnd_sgmnt.spnd_sgmnt_cd} = ${fin_tx.spnd_sgmnt_cd_1} ;;
+    relationship: many_to_many
+    sql_on: ${fin_spnd_sgmnt.spnd_sgmnt_cd} = ${fin_tx.spnd_sgmnt_cd_1} ;;
   }
 }
